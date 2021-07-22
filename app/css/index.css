@@ -3,6 +3,11 @@
   padding: 0;
 }
 
+@font-face {
+  font-family: RTWSYueRoudGoG0v1-Regular;
+  src: url("fonts/RTWSYueRoudGoG0v1-Regular.ttf");
+}
+
 body {
   background-color: #efefef;
   font-family: RTWSYueRoudGoG0v1-Regular;
