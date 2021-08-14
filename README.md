@@ -1,4 +1,4 @@
-# 盐焗鸡的[个人博客](https://justin116.github.io)
+# 盐焗鸡的[个人博客](https://justin116.github.io/app/)
 
 ## 作者信息
 
