@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'WhitneySemibold';
+  src: url(Whitney-Semibold.otf);
+}
+
+@font-face {
+  font-family: 'WhitneyLight';
+  src: url(Whitney-Light.otf);
+}
+
+@font-face {
+  font-family: 'UniSans';
+  src: url(UniSans/Uni\ Sans\ Thin.otf);
+}
+
+body {
+  background-color: #34373c;
+}
+
+.chatBox {
+  height: auto;
+  overflow: auto;
+  margin-top: .5em;
+  padding: .25em;
+}
+
+.chatBox:nth-child(1){
+  margin-top: 1em;
+}
+
+.pfp {
+  height: 2.5em;
+  margin-left: .75em;
+  border-radius: 50%;
+  float: left;
+}
+
+.detail {
+  --realDetailMarginLeft: .5em;
+  margin-left: calc(var(--realDetailMarginLeft) + 3.5em);
+  margin-top: .1em;
+}
+
+.sender {
+  color: #ffffff;
+  font-size: 1.1em;
+  font-family: 'WhitneySemibold';
+  display: inline-block;
+}
+
+.sendTime {
+  color: #888;
+  font-size: .8em;
+  font-family: 'WhitneyLight';
+  display: inline-block;
+}
+
+.message {
+  color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.code {
+  margin-top: .2em;
+  border-radius: .25em;
+  line-height: 1.25em;
+  background-color: #282835;
+  font-family: 'Inconsolata', monospace;
+  display: inline-block;
+}
