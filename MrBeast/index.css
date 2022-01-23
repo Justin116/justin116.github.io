@@ -74,7 +74,7 @@ body {
   }
 }
 
-@media all and (orientation: landscape) {
+@media all and (orientation: portrait) {
   .card {
     width: 90%;
     height: 32em;
