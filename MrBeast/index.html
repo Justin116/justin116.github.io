@@ -170,7 +170,7 @@
         <div class="description">这个人很牛逼这个人很牛逼这个人很牛逼这个人很牛逼这个人很牛逼这个人很牛逼这个人很牛逼这个人很牛逼这个人很牛逼这个人很牛逼这个人很牛逼这个人很牛逼这个人很牛逼这个人很牛逼这个人很牛逼这个人很牛逼这个人很牛逼这个人很牛逼这个人很牛逼这个人很牛逼这个人很牛逼这个人很牛逼这个人很牛逼这个人很牛逼这个人很牛逼</div>
       </div>
     </div>
-    <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" integrity="sha384-GzYo0odaNGyutpiK453MYlbqb5Sl9E4yHmvkZUVKwRFnh+fstukCYzKiaEwc3xz/" crossorigin="anonymous"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" crossorigin="anonymous" integrity="sha384-xo0y/e0G8EYbb6HmyTma6ZIsMAxTWxhs2gxIB3/xu1WkYrr+/5iGDZauuM61IN33"></script>
     <script>
       function initPayPalButton() {
         var description = document.querySelector('#smart-button-container #description');
@@ -180,21 +180,21 @@
         var invoiceid = document.querySelector('#smart-button-container #invoiceid');
         var invoiceidError = document.querySelector('#smart-button-container #invoiceidError');
         var invoiceidDiv = document.querySelector('#smart-button-container #invoiceidDiv');
-    
+
         var elArr = [description, amount];
-    
+
         if (invoiceidDiv.firstChild.innerHTML.length > 1) {
           invoiceidDiv.style.display = "block";
         }
-    
+
         var purchase_units = [];
         purchase_units[0] = {};
         purchase_units[0].amount = {};
-    
+
         function validate(event) {
           return event.value.length > 0;
         }
-    
+
         paypal.Buttons({
           style: {
             color: 'silver',
@@ -203,14 +203,14 @@
             layout: 'vertical',
             
           },
-    
+
           onInit: function (data, actions) {
             actions.disable();
-    
+
             if(invoiceidDiv.style.display === "block") {
               elArr.push(invoiceid);
             }
-    
+
             elArr.forEach(function (item) {
               item.addEventListener('keyup', function (event) {
                 var result = elArr.every(validate);
@@ -222,56 +222,56 @@
               });
             });
           },
-    
+
           onClick: function () {
             if (description.value.length < 1) {
-              descriptionError.style.display = "block";
+              descriptionError.style.visibility = "visible";
             } else {
-              descriptionError.style.display = "none";
+              descriptionError.style.visibility = "hidden";
             }
-    
+
             if (amount.value.length < 1) {
-              priceError.style.display = "block";
+              priceError.style.visibility = "visible";
             } else {
-              priceError.style.display = "none";
+              priceError.style.visibility = "hidden";
             }
-    
+
             if (invoiceid.value.length < 1 && invoiceidDiv.style.display === "block") {
-              invoiceidError.style.display = "block";
+              invoiceidError.style.visibility = "visible";
             } else {
-              invoiceidError.style.display = "none";
+              invoiceidError.style.visibility = "hidden";
             }
-    
+
             purchase_units[0].description = description.value;
             purchase_units[0].amount.value = amount.value;
-    
+
             if(invoiceid.value !== '') {
               purchase_units[0].invoice_id = invoiceid.value;
             }
           },
-    
+
           createOrder: function (data, actions) {
             return actions.order.create({
               purchase_units: purchase_units,
             });
           },
-    
+
           onApprove: function (data, actions) {
             return actions.order.capture().then(function (orderData) {
-    
+
               // Full available details
               console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-    
+
               // Show a success message within this page, e.g.
               const element = document.getElementById('paypal-button-container');
               element.innerHTML = '';
               element.innerHTML = '<h3>Thank you for your payment!</h3>';
-    
+
               // Or go to another URL:  actions.redirect('thank_you.html');
               
             });
           },
-    
+
           onError: function (err) {
             console.log(err);
           }
