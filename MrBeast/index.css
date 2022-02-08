@@ -41,7 +41,7 @@ body {
   text-align: center;
 }
 
-.introContainer, .memberContainer {
+.introContainer, .donateContainer, .memberContainer {
   width: 80%;
   margin: 0 auto;
 }
@@ -98,6 +98,83 @@ a:hover {
   text-align: center;
   margin-top: 1em;
   margin-bottom: .7em;
+}
+
+.donateText {
+  font-size: 1.2em;
+  color: #212121;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: .7em;
+}
+
+input {
+  height: 3em;
+  background-color: #FDFEFB;
+  border-radius: 50vh;
+  border: 2px solid #CDEEA8;
+  padding: .5em;
+  margin-top: .5em;
+  outline: none;
+}
+
+input[name="descriptionInput"] {
+  width: 100%;
+}
+
+input[name="amountInput"] {
+  width: 10em;
+  text-align: right;
+}
+
+input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
+  margin-left: 5px;
+}
+
+#descriptionError {
+  font-size: 1em;
+  color: #F44336;
+  text-align: center;
+  margin-top: 1em;
+  display: none;
+}
+
+.donatePrice {
+  font-size: 1.2em;
+  color: #212121;
+  text-align: center;
+  margin-top: .5em;
+  margin-bottom: .7em;
+}
+
+#priceLabelError {
+  font-size: 1em;
+  color: #F44336;
+  text-align: center;
+  margin-top: 1em;
+  display: none;
+}
+
+#invoiceidDiv {
+  font-size: 1.2em;
+  color: #212121;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: .7em;
+  display: none;
+}
+
+#invoiceidError {
+  font-size: 1em;
+  color: #F44336;
+  text-align: center;
+  margin-top: 1em;
+  display: none;
+}
+
+#paypal-button-container {
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .card {
