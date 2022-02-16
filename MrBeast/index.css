@@ -51,10 +51,25 @@ body {
   margin-top: .7em;
 }
 
-.pageIntro {
+.siteBuilder {
   font-size: 1em;
   color: #212121;
   text-align: center;
+  margin-top: .3em;
+}
+
+.siteBuilderLink {
+  text-decoration: none;
+  background-color: #bbec82;
+  border-radius: 6px;
+  margin-right: .15em;
+  padding: .3em;
+  color: #40700a;
+}
+
+.siteBuilderLink:hover {
+  background-color: #40700a;
+  color: #bbec82;
 }
 
 .introContainer, .donateContainer, .memberContainer {
@@ -82,7 +97,7 @@ a {
   width: 2.5em;
   text-decoration: none;
   border-radius: 50%;
-  transition: .3s ease-in-out;
+  transition: .1s ease-in-out;
 }
 
 a:hover {
@@ -108,11 +123,23 @@ a:hover {
 }
 
 .mainlandDonateQRCode {
-  width: 30em;
+  max-width: 30em;
   display: block;
   margin: 0 auto;
   margin-top: 1em;
   margin-bottom: 1em;
+}
+
+@media all and (orientation: landscape) {
+  .mainlandDonateQRCode {
+    width: 80%;
+  }
+}
+
+@media all and (orientation: portrait) {
+  .mainlandDonateQRCode {
+    width: 100%;
+  }
 }
 
 .donateText {
@@ -194,11 +221,13 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 }
 
 .card {
+  max-width: 23em;
   background-color: #DCEDC8;
   border-radius: 50px;
   box-shadow: 0px 0px 10px #212121;
   margin: 0 auto;
   margin-top: 2em;
+  padding-bottom: 25em;
   position: relative;
   box-shadow:  20px 20px 60px #bbc9aa,
   -20px -20px 60px #fdffe6;
@@ -206,15 +235,13 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 
 @media all and (orientation: landscape) {
   .card {
-    width: 23em;
-    height: 32em;
+    width: 80%;
   }
 }
 
 @media all and (orientation: portrait) {
   .card {
     width: 100%;
-    height: 32em;
   }
 }
 
@@ -259,7 +286,6 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   height: 1.5em;
   width: 2.7em;
   font-size: 1em;
-  color: #212121;
   text-align: center;
   line-height: 1.5em;
   border-radius: 6px;
@@ -287,6 +313,23 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   background-color: #c5c5c5;
 }
 
+.joinTime {
+  height: 1.5em;
+  font-size: 1em;
+  text-align: center;
+  line-height: 1.5em;
+  border-radius: 6px;
+  display: inline-block;
+  background-color: #ffa600;
+  color: #f3f3f4;
+  position: absolute;
+  left: 50%;
+  top: 12.5em;
+  transform: translate(-50%);
+  text-align: center;
+  padding: 0 .3em;
+}
+
 .description {
   width: 80%;
   font-size: 1em;
@@ -294,5 +337,5 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   position: absolute;
   left: 50%;
   transform: translate(-50%);
-  top: 13em;
+  top: 14.5em;
 }
