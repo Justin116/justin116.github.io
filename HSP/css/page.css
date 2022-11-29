@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #b7fff8;
+  color: #000;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.title {
+  margin-top: 1em;
+  text-align: center;
+  font-size: 3em;
+}
+
+.container {
+  width: 80%;
+  margin-left: calc((100% - 80%) / 2);
+  margin-top: 1.7em;
+}
+
+img {
+  width: 100%;
+  margin-top: 2em;
+}
+
+#fImg {
+  margin-top: 0;
+}
