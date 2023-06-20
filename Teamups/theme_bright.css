@@ -1,0 +1,11 @@
+body {
+  background-color: white;
+}
+
+.team {
+  color: black;
+}
+
+.nN, .teamName {
+  color: darkcyan;
+}
